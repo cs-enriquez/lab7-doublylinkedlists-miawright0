@@ -76,12 +76,11 @@
 	// Don't forget that your head and tail pointers will be null pointers if the list is empty
 	void StudentList::popBack() 
 	{
-		if(tail = nullptr)
-		{
-			cout << "Error: List is empty." << endl;
-			
-		}
-
+	 if (tail == nullptr) 
+	 {
+        cout << "Error: List is empty." << endl;
+        return; 
+    }
 		Node *temp = tail;
 
 		if(tail == head)
@@ -104,11 +103,11 @@
 	// Don't forget that your head and tail pointers will be null pointers if the list is empty
 	void StudentList::popFront() 
 	{
-		if(head = nullptr)
-		{
-			cout << "Error: List is empty" << endl;
-		}
-		
+    if (head == nullptr) 
+	{ 
+        cout << "Error: List is empty" << endl;
+        return;
+    }
 		Node *temp = head;
 		if(head == tail)
 		{
