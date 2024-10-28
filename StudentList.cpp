@@ -141,7 +141,7 @@
 		{
 			cout << "Not in the list" << endl;
 			addBack(s);
-			
+			return;
 		}
 
 		 Node* newNode = new Node(s);
@@ -241,15 +241,16 @@
 
 	while (current != nullptr)
 	{
-		if(current -> data.id = idNum)
+		if(current -> data.id == idNum)
 		{
 			current -> data.GPA = newGPA;
+			return;
 		}
 
 	current = current -> next;
 
 	}	
-
+cout << "No student found with ID " << idNum << "." << endl;
 	}
 
 	//Add all students from otherList to this list.
@@ -301,7 +302,7 @@
 			{
 				honorRollList.addBack(current->data);
 			}
-		current = current -> next;
+		current = current->next;
 		}
 		return honorRollList;
 	}
