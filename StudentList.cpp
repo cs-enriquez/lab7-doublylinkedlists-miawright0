@@ -75,29 +75,32 @@
 	// should not fail if list is empty! Print an error message if this occurs
 	// Don't forget that your head and tail pointers will be null pointers if the list is empty
 	void StudentList::popBack() 
-	{
-	 if (tail == nullptr) 
-	 {
+{
+    if (tail == nullptr) 
+    {
         cout << "Error: List is empty." << endl;
-        return; 
+        return;
     }
-		Node *temp = tail;
 
-		if(tail == head)
-		{
-			tail = nullptr;
-			head = nullptr;
-		}
-		else
-		{
-			tail = tail -> prev;
-			tail -> next = nullptr;
-		}
-		delete temp;
-		numStudents--;
+    Node *temp = tail;
 
-	}
+    if (tail == head) 
+    {
+        tail = nullptr;
+        head = nullptr;
+    }
+    else
+    {
+        tail = tail->prev;
+        if (tail) {
+            tail->next = nullptr;
+        }
+    }
 
+    delete temp;
+    numStudents--;  
+    cout << "Node removed, numStudents is now: " << numStudents << endl;
+}
 	// Remove the Node with the student at the front (head) of the list
 	// should not fail if list is empty! Print an error message if this occurs
 	// Don't forget that your head and tail pointers will be null pointers if the list is empty
