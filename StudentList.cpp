@@ -267,8 +267,7 @@ cout << "No student found with ID " << idNum << "." << endl;
 	s1 <-> s2 <-> s3 <-> s4 <-> s5
 	and otherList should be empty and have zero students.
 	*/
-	void StudentList::mergeList(StudentList &otherList) 
-	void StudentList::mergeList(StudentList &otherList) 
+	void StudentList::mergeList(StudentList &otherList)
 {
     if (otherList.head == nullptr)  
     {
