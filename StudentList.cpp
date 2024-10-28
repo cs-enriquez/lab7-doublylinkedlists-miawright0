@@ -268,28 +268,31 @@ cout << "No student found with ID " << idNum << "." << endl;
 	and otherList should be empty and have zero students.
 	*/
 	void StudentList::mergeList(StudentList &otherList) 
-	{
-		if (otherList.head == nullptr)
-		{
-			return;
-		}
+	void StudentList::mergeList(StudentList &otherList) 
+{
+    if (otherList.head == nullptr)  
+    {
+        return;
+    }
 
-		if (head == nullptr)
-		{
-			head = otherList.head;
-			tail = otherList.tail;
-		}
-		else
-		{
-		tail->next = otherList.head;
-		otherList.head->prev = tail;
-		tail = otherList.tail;
-		}
+    if (head == nullptr)  
+    {
+        head = otherList.head;
+        tail = otherList.tail;
+    }
+    else  
+    {
+        tail->next = otherList.head;
+        otherList.head->prev = tail;
+        tail = otherList.tail;
+    }
 
-		otherList.head = nullptr;
-		otherList.tail = nullptr;
-		otherList.numStudents = 0;
-	}
+    
+    numStudents += otherList.numStudents;
+    otherList.head = nullptr;
+    otherList.tail = nullptr;
+    otherList.numStudents = 0; 
+}
 
 	//create a StudentList of students whose gpa is at least minGPA.
 	//Return this list.  The original (current) list should
